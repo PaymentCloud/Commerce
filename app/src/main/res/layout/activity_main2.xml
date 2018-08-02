@@ -48,9 +48,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="PCLoudID"
+
                 android:inputType="textEmailAddress"
                 android:enabled="false"
-                android:text=""
+                android:text="04367AB2173C81"
                 android:textColor="@color/white" />
         </android.support.design.widget.TextInputLayout>
 

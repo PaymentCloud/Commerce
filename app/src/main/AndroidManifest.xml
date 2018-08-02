@@ -34,6 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Summary"></activity>
+        <activity android:name=".Lottie"/>
     </application>
 
 </manifest>

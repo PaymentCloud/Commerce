@@ -183,7 +183,7 @@ public class Main2Activity extends AppCompatActivity {
                                 editor.putString("charged", String.valueOf(amount));
                                 editor.putString("pnfc_tag", String.valueOf(pnfc_tag));
                                 editor.commit();
-                                Intent i = new Intent(Main2Activity.this, Summary.class);
+                                Intent i = new Intent(Main2Activity.this, Lottie.class);
                                 startActivity(i);
 
                                 hidepDialog();
