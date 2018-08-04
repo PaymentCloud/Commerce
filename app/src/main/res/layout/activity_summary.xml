@@ -20,7 +20,7 @@
         android:paddingTop="50dp"
         android:orientation="vertical"
 
-        android:background="@drawable/gray"
+
         android:gravity="center"
         android:paddingBottom="10dp">
         <ImageView
