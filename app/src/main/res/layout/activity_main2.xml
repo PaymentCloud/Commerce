@@ -49,9 +49,9 @@
                 android:layout_height="wrap_content"
                 android:hint="PCLoudID"
 
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:enabled="false"
-                android:text="04367AB2173C81"
+
                 android:textColor="@color/white" />
         </android.support.design.widget.TextInputLayout>
 
@@ -67,7 +67,7 @@
                 android:id="@+id/input_balance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Saldo a debitar"
+                android:hint="$ Saldo a debitar"
                 android:inputType="numberDecimal"
                 android:text=""
                 android:textColor="@color/white" />

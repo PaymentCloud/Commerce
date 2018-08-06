@@ -177,7 +177,6 @@ public class Main2Activity extends AppCompatActivity {
 
                                 String amount = profile.getString("amount");
                                 String pnfc_tag = profile.getString("pnfc_tag");
-                                Toast.makeText(Main2Activity.this, pnfc_tag, Toast.LENGTH_SHORT).show();
                                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                                 final SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("charged", String.valueOf(amount));
@@ -247,6 +246,10 @@ public class Main2Activity extends AppCompatActivity {
             pDialog.dismiss();
     }
 
-
+    public void onBackPressed() {
+        if (Integer.valueOf(Integer.valueOf(0).intValue() + 1).intValue() != 1) {
+            finish();
+        }
+    }
 
 }

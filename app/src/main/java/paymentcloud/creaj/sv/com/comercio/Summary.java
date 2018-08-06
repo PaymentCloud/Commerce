@@ -1,11 +1,14 @@
 package paymentcloud.creaj.sv.com.comercio;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +30,7 @@ public class Summary extends AppCompatActivity {
      ProgressDialog pDialog;
 
     TextView txtCharged, txtCredit;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +40,19 @@ public class Summary extends AppCompatActivity {
         txtCharged = findViewById(R.id.txtCharged);
         txtCredit = findViewById(R.id.txtAmount);
         pDialog = new ProgressDialog(this);
+        back = findViewById(R.id.back);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Main2Activity.class);
+                startActivity(i);
+            }
+        });
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String pnfc_tag = prefs.getString("pnfc_tag", null);
-        Toast.makeText(this, pnfc_tag, Toast.LENGTH_SHORT).show();
+
         actLeer(pnfc_tag);
     }
 
@@ -113,6 +126,12 @@ public class Summary extends AppCompatActivity {
     private void hidepDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    public void onBackPressed() {
+        if (Integer.valueOf(Integer.valueOf(0).intValue() + 1).intValue() != 1) {
+            finish();
+        }
     }
 
 }
