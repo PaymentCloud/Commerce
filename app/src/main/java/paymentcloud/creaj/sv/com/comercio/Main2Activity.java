@@ -43,13 +43,14 @@ public class Main2Activity extends AppCompatActivity {
     int accion =0;
     String name, id;
     EditText username, credittocharge;
+    int count = 0;
+    int preciotem = 0;
+    int precio1 = 50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
-        txtbussinessid = this.findViewById(R.id.bussinessid);
         Button btnCharge = this.findViewById(R.id.btn_charge);
 
         username = this.findViewById(R.id.input_NFC);
@@ -94,6 +95,23 @@ public class Main2Activity extends AppCompatActivity {
         pDialog.setCancelable(false);
 
         initNFC();
+
+
+
+        final Button btn1product1 = findViewById(R.id.btn1product1);
+        btn1product1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                btn1product1.setText("Cantidad X"+String.valueOf(count));
+
+                preciotem += precio1;
+
+                credittocharge.setText(String.valueOf(preciotem));
+
+            }
+        });
+
 
     }
     @Override

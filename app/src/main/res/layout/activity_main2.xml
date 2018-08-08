@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
     android:fitsSystemWindows="true">
 
@@ -9,17 +9,30 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="198dp"
+        android:paddingTop="165dp"
         android:paddingLeft="24dp"
         android:background="@color/black"
         android:alpha="0.8"
-
         android:paddingRight="24dp">
-        <TextView
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bussinessid"
-            />
+            android:background="@color/black"
+            android:alpha="0.8">
+            <Button
+                android:id="@+id/btn1product1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Producto prueba"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/btn1product1"
+                android:text="Producto prueba 2"/>
+        </RelativeLayout>
+
         <Button
             android:id="@+id/readNFC"
             android:text="Leer una Tag:"
