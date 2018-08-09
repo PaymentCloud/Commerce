@@ -1,7 +1,9 @@
 package paymentcloud.creaj.sv.com.comercio;
 
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -9,6 +11,7 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.preference.PreferenceManager;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,11 +44,14 @@ public class Main2Activity extends AppCompatActivity {
     final protected static char[] hexArray = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
     private NfcAdapter mNfcAdapter;
     int accion =0;
-    String name, id;
-    EditText username, credittocharge;
+    String name, user_id;
+    EditText  credittocharge;
+    TextView username;
+
     int count = 0;
     int preciotem = 0;
     int precio1 = 50;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +68,7 @@ public class Main2Activity extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         isLogged = preferences.getBoolean("is_logged",false);
         name = preferences.getString("name", null);
-        id = preferences.getString("user_id", null);
+        user_id = preferences.getString("user_id", null);
 
 
         readNFCButton.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +85,23 @@ public class Main2Activity extends AppCompatActivity {
                 try {
                     if (username.length()>3 && credittocharge.length()>0){
 
-                        Chargewallet(credittocharge.getText().toString(),username.getText().toString(),id);
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(Main2Activity.this);
+                        builder.setMessage("Deseas hacer efectivo este cobro?")
+                                .setCancelable(false)
+                                .setPositiveButton("Cobrar", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        Chargewallet(credittocharge.getText().toString(),username.getText().toString(),user_id);
+                                    }
+                                })
+                                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }else{
                         Toast.makeText(Main2Activity.this, "Datos no validos ", Toast.LENGTH_SHORT).show();
                     }
