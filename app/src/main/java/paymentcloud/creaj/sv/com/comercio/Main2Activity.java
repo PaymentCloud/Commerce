@@ -46,11 +46,17 @@ public class Main2Activity extends AppCompatActivity {
     int accion =0;
     String name, user_id;
     EditText  credittocharge;
+    EditText summary;
     TextView username;
 
     int count = 0;
     int preciotem = 0;
     int precio1 = 50;
+
+    int count2 = 0;
+    int preciotem2 = 0;
+    int precio2 = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,8 @@ public class Main2Activity extends AppCompatActivity {
 
         username = this.findViewById(R.id.input_NFC);
         credittocharge = this.findViewById(R.id.input_balance);
+        summary = this.findViewById(R.id.input_summary);
+
         final Button readNFCButton = this.findViewById(R.id.readNFC);
 
         //Preferences
@@ -84,7 +92,6 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     if (username.length()>3 && credittocharge.length()>0){
-
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(Main2Activity.this);
                         builder.setMessage("Deseas hacer efectivo este cobro?")
@@ -118,8 +125,6 @@ public class Main2Activity extends AppCompatActivity {
 
         initNFC();
 
-
-
         final Button btn1product1 = findViewById(R.id.btn1product1);
         btn1product1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +134,22 @@ public class Main2Activity extends AppCompatActivity {
 
                 preciotem += precio1;
 
-                credittocharge.setText(String.valueOf(preciotem));
+                credittocharge.setText(String.valueOf(preciotem + preciotem2));
+
+            }
+        });
+
+
+        final Button btn1product2 = findViewById(R.id.btn1product2);
+        btn1product2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count2++;
+                btn1product2.setText("Cantidad X"+String.valueOf(count2));
+
+                preciotem2 += precio2;
+
+                credittocharge.setText(String.valueOf(preciotem + preciotem2));
 
             }
         });
@@ -212,7 +232,6 @@ public class Main2Activity extends AppCompatActivity {
 
                             try{
 
-
                                 JSONObject profile = new JSONObject(response);
 
                                 String amount = profile.getString("amount");
@@ -250,7 +269,7 @@ public class Main2Activity extends AppCompatActivity {
                     params.put("amount", credit);
                     params.put("user_id", businessid);
                     params.put("pnfc_tag", nfc);
-
+                    params.put("custom_description", summary.getText().toString());
                     return params;
                 }
             };

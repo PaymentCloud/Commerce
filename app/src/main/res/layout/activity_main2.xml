@@ -28,6 +28,7 @@
                 android:background="@color/black"
                 android:textColor="@color/white"
                 android:layout_marginRight="8dp"
+                android:visibility="gone"
                 android:drawableRight="@drawable/drink"/>
 
             <Button
@@ -38,6 +39,7 @@
                 android:layout_toRightOf="@id/btn1product1"
                 android:background="@color/black"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 android:drawableRight="@drawable/hamburguesa"/>
         </RelativeLayout>
 
@@ -61,7 +63,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="04367AB2173C81"
+            android:text=""
             android:id="@+id/input_NFC"
             android:background="@color/black"
             android:textColor="@color/white"
@@ -85,7 +87,23 @@
                 android:text=""
                 android:textColor="@color/white" />
         </android.support.design.widget.TextInputLayout>
+        <!-- Password Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:theme="@style/TextLabel">
 
+            <EditText
+                android:id="@+id/input_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Escriba descripcion del producto"
+
+                android:text=""
+                android:textColor="@color/white" />
+        </android.support.design.widget.TextInputLayout>
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_charge"
             android:layout_width="fill_parent"
