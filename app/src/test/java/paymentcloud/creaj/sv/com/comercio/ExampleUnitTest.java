@@ -1,4 +1,4 @@
-package paymentcloud.creaj.sv.com.customerspcloud;
+package paymentcloud.creaj.sv.com.comercio;
 
 import org.junit.Test;
 

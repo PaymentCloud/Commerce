@@ -1,4 +1,4 @@
-package paymentcloud.creaj.sv.com.customerspcloud;
+package paymentcloud.creaj.sv.com.comercio;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("paymentcloud.creaj.sv.com.customerspcloud", appContext.getPackageName());
+        assertEquals("paymentcloud.creaj.sv.com.comercio", appContext.getPackageName());
     }
 }
