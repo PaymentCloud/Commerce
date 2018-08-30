@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
     android:fitsSystemWindows="true">
 
@@ -9,29 +9,28 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="206dp"
+        android:paddingTop="100dp"
         android:paddingLeft="24dp"
         android:background="@color/black"
-        android:alpha="0.8"
-
+        android:alpha="0.6"
         android:paddingRight="24dp">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:text="Leer IDTag"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/readNFC"
-            android:text="Leer mi Tag:"
-            android:alpha="0.9"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-
-            android:textColor="@color/white"
-            android:background="@color/paymentcloud"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginBottom="20dp"
-            android:visibility="gone"
-            android:layout_gravity="center_horizontal" />
+            android:layout_width="75dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/scan"
+            android:textColor="@color/white" />
 
         <!-- Email Label -->
         <android.support.design.widget.TextInputLayout
@@ -46,39 +45,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="MyCLoudID"
-                android:inputType="textEmailAddress"
-                android:text="floresdelarry@gmail.com"
+                android:enabled="false"
+                android:inputType="textPassword"
+                android:paddingBottom="15dp"
                 android:textColor="@color/white" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
         <android.support.design.widget.TextInputLayout
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:theme="@style/TextLabel">
 
             <EditText
-                android:id="@+id/input_balance"
+                android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:inputType="textPassword"
-
                 android:textColor="@color/white" />
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.AppCompatButton
+        <Button
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:padding="12dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginBottom="27dp"
+            android:padding="18dp"
             android:textColor="@color/white"
             android:textStyle="bold"
-
+            android:theme="@style/MyButton"
             android:background="@color/paymentcloud"
             android:text="Login"/>
 
@@ -86,8 +87,10 @@
             android:id="@+id/link_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginBottom="100dp"
             android:text="No account yet? Create one"
+            android:paddingTop="13dp"
             android:gravity="center"
             android:layout_marginTop="15dp"
             android:textColor="@color/white"

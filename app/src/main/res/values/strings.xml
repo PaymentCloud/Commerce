@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Comercio</string>
+    <string name="app_name">PC Customer</string>
+    <string name="app_id">140943353426155</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">e0ac23b08156484f2ba78a2692582433</string>
+    <string name="ak_login_protocol_scheme">ak465871913602533</string>
+    <string name="title_activity_second">SecondActivity</string>
 </resources>
